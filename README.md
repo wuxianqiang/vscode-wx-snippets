@@ -1,12 +1,8 @@
 # Vue 2 Snippets for Visual Studio Code
 
-This extension adds Vue 2 Code Snippets into Visual Studio Code.
+This extension adds WeChat Snippets into Visual Studio Code.
 
-这个插件基于最新的 Vue 2 的 API 添加了Code Snippets。
-
-[![](https://vsmarketplacebadge.apphb.com/version/hollowtree.vue-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets)
-[![](https://vsmarketplacebadge.apphb.com/installs/hollowtree.vue-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets)
-
+这个插件基于最新的微信小程序 API 添加了Code Snippets。
 
 ### It looks like:
 ![](https://raw.githubusercontent.com/hollowtree/vscode-vue-snippets/master/img/show1.png)

@@ -6,1056 +6,247 @@
         ],
         "description": "import ... from ..."
     },
-    "vue": {
-        "prefix": "newVue",
+    "App": {
+        "prefix": "app",
         "body": [
-            "new Vue({",
-            "\t$1",
+            "App({",
+            "\t${1:// ...}",
             "})"
         ],
-        "description": "new Vue()"
-    },
-    "silent": {
-        "prefix": "VueConfigSilent",
-        "body": [
-            "Vue.config.silent = ${1:true}"
-        ],
-        "description": "Vue.config.silent"
-    },
-    "optionMergeStrategies": {
-        "prefix": "VueConfigOptionMergeStrategies",
-        "body": [
-            "Vue.config.optionMergeStrategies$1"
-        ],
-        "description": "Vue.config.optionMergeStrategies"
-    },
-    "devtools": {
-        "prefix": "VueConfigDevtools",
-        "body": [
-            "Vue.config.devtools = ${1:true}"
-        ],
-        "description": "Vue.config.devtools"
-    },
-    "errorHandler": {
-        "prefix": "VueConfigErrorHandler",
-        "body": [
-            "Vue.config.errorHandler = function (err, vm, info) {",
-            "\t${1:// handle error}",
-            "}"
-        ],
-        "description": "Vue.config.errorHandler"
-    },
-    "warnHandler": {
-        "prefix": "VueConfigWarnHandler",
-        "body": [
-            "Vue.config.warnHandler = function (msg, vm, trace) {",
-            "\t${1:// handle warn}",
-            "}"
-        ],
-        "description": "Vue.config.warnHandler"
-    },
-    "ignoredElements": {
-        "prefix": "VueConfigIgnoredElements",
-        "body": [
-            "Vue.config.ignoredElements = [",
-            "\t'${1}'",
-            "]$0"
-        ],
-        "description": "Vue.config.ignoredElements"
-    },
-    "keyCodes": {
-        "prefix": "VueConfigKeyCodes",
-        "body": [
-            "Vue.config.keyCodes = {",
-            "\t${1:// camelCase won`t work}",
-            "}"
-        ],
-        "description": "Vue.config.keyCodes"
-    },
-    "performance": {
-        "prefix": "VueConfigPerformance",
-        "body": [
-            "Vue.config.performance = ${1:true}"
-        ],
-        "description": "Vue.config.performance"
-    },
-    "productionTip": {
-        "prefix": "VueConfigProductionTip",
-        "body": [
-            "Vue.config.productionTip = ${1:false}"
-        ],
-        "description": "Vue.config.productionTip"
-    },
-    "extend": {
-        "prefix": "vueExtend",
-        "body": [
-            "Vue.extend({",
-            "\ttemplate:${1:template}",
-            "})"
-        ],
-        "description": "Vue.extend( options )"
-    },
-    "nextTick": {
-        "prefix": "VueNextTick",
-        "body": [
-            "Vue.nextTick({",
-            "\t$1",
-            "})"
-        ],
-        "description": "Vue.nextTick( callback, [context] )"
-    },
-    "nextTickThen": {
-        "prefix": "VueNextTickThen",
-        "body": [
-            "Vue.nextTick({",
-            "\t$1",
-            "}).then(function ($2) {",
-            "\t$3",
-            "})"
-        ],
-        "description": "Vue.nextTick( callback, [context] ).then(function(){ })"
-    },
-    "set": {
-        "prefix": "VueSet",
-        "body": [
-            "Vue.set(${1:target}, ${2:key}, ${3:value})"
-        ],
-        "description": "Vue.set( target, key, value )"
-    },
-    "delete": {
-        "prefix": "VueDelete",
-        "body": [
-            "Vue.delete(${1:target}, ${2:key})"
-        ],
-        "description": "Vue.delete( target, key )"
-    },
-    "directive": {
-        "prefix": "VueDirective",
-        "body": [
-            "Vue.directive(${1:id}${2:, [definition]})"
-        ],
-        "description": "Vue.directive( id, [definition] )"
-    },
-    "filter": {
-        "prefix": "VueFilter",
-        "body": [
-            "Vue.filter(${1:id}${2:, [definition]})"
-        ],
-        "description": "Vue.filter( id, [definition] )"
-    },
-    "component": {
-        "prefix": "VueComponent",
-        "body": [
-            "Vue.component(${1:id}${2:, [definition]})$0"
-        ],
-        "description": "Vue.component( id, [definition] )"
-    },
-    "use": {
-        "prefix": "VueUse",
-        "body": [
-            "Vue.use(${1:plugin})$0"
-        ],
-        "description": "Vue.use( plugin )"
-    },
-    "mixin": {
-        "prefix": "VueMixin",
-        "body": [
-            "Vue.mixin({${1:mixin}})"
-        ],
-        "description": "Vue.mixin( mixin )"
-    },
-    "compile": {
-        "prefix": "VueCompile",
-        "body": [
-            "Vue.compile(${1:template})"
-        ],
-        "description": "Vue.compile( template )"
-    },
-    "version": {
-        "prefix": "VueVersion",
-        "body": [
-            "Vue.version$0"
-        ],
-        "description": "Vue.version.split('.')[]"
+        "description": "App 注册小程序"
     },
     "data": {
         "prefix": "data",
         "body": [
-            "data() {",
-            "\treturn {",
-            "\t\t$1",
-            "\t}",
-            "},$0"
+            "data: {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "The data object for the Vue instance."
+        "description": "Page 页面的初始数据，Component 组件的内部数据"
     },
-    "props": {
-        "prefix": "props",
+    "Component": {
+        "prefix": "component",
         "body": [
-            "props"
+            "Component({",
+            "\t${1:// ...}",
+            "})"
         ],
-        "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
+        "description": "Component 创建自定义组件，接受一个 Object 类型的参数"
     },
-    "propsData": {
-        "prefix": "propsData",
+    "onLaunch": {
+        "prefix": "onLaunch",
         "body": [
-            "propsData"
+            "onLaunch () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "Restriction: only respected in instance creation via `new`. Pass props to an instance during its creation. This is primarily intended to make unit testing easier."
+        "description": "App 生命周期回调——监听小程序初始化"
     },
-    "scopedSlots": {
-        "prefix": "scopedSlots",
+    "onLoad": {
+        "prefix": "onLoad",
         "body": [
-            "scopedSlots"
+            "onLoad () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "just a word"
+        "description": "Page 生命周期回调—监听页面加载"
     },
-    "computed": {
-        "prefix": "computed",
+    "onUnload": {
+        "prefix": "onUnload",
         "body": [
-            "computed: {",
-            "\t$1",
-            "},$0"
+            "onUnload () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "Computed properties to be mixed into the Vue instance. "
+        "description": "Page 生命周期回调—监听页面卸载"
     },
-    "methods": {
-        "prefix": "methods",
+    "onPullDownRefresh": {
+        "prefix": "onPullDownRefresh",
         "body": [
-            "methods: {",
-            "\t$1",
-            "},$0"
+            "onPullDownRefresh () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "Methods to be mixed into the Vue instance."
+        "description": "Page 回调，监听用户下拉动作"
     },
-    "watch": {
-        "prefix": "watch",
+    "onReachBottom": {
+        "prefix": "onReachBottom",
         "body": [
-            "watch: {",
-            "\t$1",
-            "},$0"
+            "onReachBottom () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. Note that you should not use an arrow function to define a watcher."
+        "description": "Page 回调，页面上拉触底事件的处理函数"
     },
-    "watchWithOptions": {
-        "prefix": "watchWithOptions",
+    "onShareAppMessage": {
+        "prefix": "onShareAppMessage",
         "body": [
-            "${1:key}: {",
-            "\tdeep: ${2:true},",
-            "\timmediate: ${3:true},",
-            "\thandler: function (${4:val}, ${5:oldVal}) {",
-            "\t\t$6",
-            "\t}",
-            "},$0"
+            "onShareAppMessage () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "Vue Watcher with options."
+        "description": "Page 回调，用户点击右上角转发"
     },
-    "el": {
-        "prefix": "el",
+    "onShareTimeline": {
+        "prefix": "onShareTimeline",
         "body": [
-            "el"
+            "onShareTimeline () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "just a word"
+        "description": "Page 回调，用户点击右上角转发到朋友圈"
     },
-    "template": {
-        "prefix": "template",
+    "onAddToFavorites": {
+        "prefix": "onAddToFavorites",
         "body": [
-            "template"
+            "onAddToFavorites () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "just a word"
+        "description": "Page 回调，用户点击右上角收藏"
     },
-    "render": {
-        "prefix": "render",
+    "onPageScroll": {
+        "prefix": "onPageScroll",
         "body": [
-            "render(h) {",
-            "\t$1",
-            "},"
+            "onPageScroll () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "An alternative to string templates allowing you to leverage the full programmatic power of JavaScript."
+        "description": "Page 回调，页面滚动触发事件的处理函数"
     },
-    "renderError": {
-        "prefix": "renderError",
+    "onResize": {
+        "prefix": "onResize",
         "body": [
-            "renderError(h, err) {",
-            "\t$1",
-            "},"
+            "onResize () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "Provide an alternative render output when the default render function encounters an error."
+        "description": "Page 回调，页面尺寸改变时触发"
     },
-    "beforeCreate": {
-        "prefix": "beforeCreate",
+    "onTabItemTap": {
+        "prefix": "onTabItemTap",
         "body": [
-            "beforeCreate() {",
-            "\t$1",
-            "},"
+            "onTabItemTap () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "Type: Function."
+        "description": "Page 回调，当前是 tab 页时，点击 tab 时触发"
+    },
+    "onShow": {
+        "prefix": "onShow",
+        "body": [
+            "onShow () {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "App 生命周期回调——监听小程序启动或切前台，Page 生命周期回调—监听页面显示"
+    },
+    "onHide": {
+        "prefix": "onHide",
+        "body": [
+            "onHide () {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "App 生命周期回调——监听小程序切后台，Page 生命周期回调—监听页面隐藏"
+    },
+    "onReady": {
+        "prefix": "onHide",
+        "body": [
+            "onHide () {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "App 生命周期回调—监听页面初次渲染完成"
+    },
+    "onError": {
+        "prefix": "onError",
+        "body": [
+            "onError () {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "App 回调，错误监听函数"
+    },
+    "onPageNotFound": {
+        "prefix": "onPageNotFound",
+        "body": [
+            "onPageNotFound () {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "App 回调，页面不存在监听函数"
+    },
+    "onUnhandledRejection": {
+        "prefix": "onUnhandledRejection",
+        "body": [
+            "onUnhandledRejection () {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "App 回调，未处理的 Promise 拒绝事件监听函数"
+    },
+    "onThemeChange": {
+        "prefix": "onThemeChange",
+        "body": [
+            "onThemeChange () {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "App 回调，监听系统主题变化"
+    },
+    "properties": {
+        "prefix": "properties",
+        "body": [
+            "properties: {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "Component 组件的对外属性，是属性名到属性设置的映射表"
     },
     "created": {
         "prefix": "created",
         "body": [
-            "created() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "beforeMount": {
-        "prefix": "beforeMount",
-        "body": [
-            "beforeMount() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "mounted": {
-        "prefix": "mounted",
-        "body": [
-            "mounted() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "beforeUpdate": {
-        "prefix": "beforeUpdate",
-        "body": [
-            "beforeUpdate() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "updated": {
-        "prefix": "updated",
-        "body": [
-            "updated() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "activated": {
-        "prefix": "activated",
-        "body": [
-            "activated() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "deactivated": {
-        "prefix": "deactivated",
-        "body": [
-            "deactivated() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "beforeDestroy": {
-        "prefix": "beforeDestroy",
-        "body": [
-            "beforeDestroy() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "destroyed": {
-        "prefix": "destroyed",
-        "body": [
-            "destroyed() {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: Function."
-    },
-    "errorCaptured": {
-        "prefix": "errorCaptured",
-        "body": [
-            "errorCaptured: (err, vm, info) => {",
-            "\t$1",
-            "},"
-        ],
-        "description": "Type: (err: Error, vm: Component, info: string) => ?boolean"
-    },
-    "directives": {
-        "prefix": "directives",
-        "body": [
-            "directives"
-        ],
-        "description": "just a word"
-    },
-    "filters": {
-        "prefix": "filters",
-        "body": [
-            "filters"
-        ],
-        "description": "just a word"
-    },
-    "componentWord": {
-        "prefix": "component",
-        "body": [
-            "component"
-        ],
-        "description": "just a word"
-    },
-    "components": {
-        "prefix": "components",
-        "body": [
-            "components"
-        ],
-        "description": "just a word"
-    },
-    "parent": {
-        "prefix": "parent",
-        "body": [
-            "parent"
-        ],
-        "description": "just a word"
-    },
-    "mixins": {
-        "prefix": "mixins",
-        "body": [
-            "mixins"
-        ],
-        "description": "just a word"
-    },
-    "extends": {
-        "prefix": "extends",
-        "body": [
-            "extends"
-        ],
-        "description": "just a word"
-    },
-    "provide": {
-        "prefix": "provide",
-        "body": [
-            "provide"
-        ],
-        "description": "just a word"
-    },
-    "inject": {
-        "prefix": "inject",
-        "body": [
-            "inject"
-        ],
-        "description": "just a word"
-    },
-    "name": {
-        "prefix": "name",
-        "body": [
-            "name"
-        ],
-        "description": "just a word"
-    },
-    "delimiters": {
-        "prefix": "delimiters",
-        "body": [
-            "delimiters"
-        ],
-        "description": "just a word"
-    },
-    "functional": {
-        "prefix": "functional",
-        "body": [
-            "functional"
-        ],
-        "description": "just a word"
-    },
-    "model": {
-        "prefix": "model",
-        "body": [
-            "model"
-        ],
-        "description": "just a word"
-    },
-    "inheritAttrs": {
-        "prefix": "inheritAttrs",
-        "body": [
-            "inheritAttrs"
-        ],
-        "description": "just a word"
-    },
-    "comments": {
-        "prefix": "comments",
-        "body": [
-            "comments"
-        ],
-        "description": "just a word"
-    },
-    "deep": {
-        "prefix": "deep",
-        "body": [
-            "deep"
-        ],
-        "description": "just a word"
-    },
-    "immediate": {
-        "prefix": "immediate",
-        "body": [
-            "immediate"
-        ],
-        "description": "just a word"
-    },
-    "vm.$data": {
-        "prefix": "vmData",
-        "body": [
-            "${1|this,vm|}.\\$data$2"
-        ],
-        "description": "Type: Object. Read only."
-    },
-    "vm.$props": {
-        "prefix": "vmProps",
-        "body": [
-            "${1|this,vm|}.\\$props$2"
-        ],
-        "description": "Type: Object. Read only."
-    },
-    "vm.$el": {
-        "prefix": "vmEl",
-        "body": [
-            "${1|this,vm|}.\\$el$2"
-        ],
-        "description": "Type: HTMLElement. Read only."
-    },
-    "vm.$options": {
-        "prefix": "vmOptions",
-        "body": [
-            "${1|this,vm|}.\\$options$2"
-        ],
-        "description": "Type: Object. Read only."
-    },
-    "vm.$parent": {
-        "prefix": "vmParent",
-        "body": [
-            "${1|this,vm|}.\\$parent$2"
-        ],
-        "description": "Type: Vue instance. Read only."
-    },
-    "vm.$root": {
-        "prefix": "vmRoot",
-        "body": [
-            "${1|this,vm|}.\\$root$2"
-        ],
-        "description": "Type: Vue instance. Read only."
-    },
-    "vm.$children": {
-        "prefix": "vmChildren",
-        "body": [
-            "${1|this,vm|}.\\$children$2"
-        ],
-        "description": "Type: Array<Vue instance>. Read only."
-    },
-    "vm.$slots": {
-        "prefix": "vmSlots",
-        "body": [
-            "${1|this,vm|}.\\$slots$2"
-        ],
-        "description": "Type: Object. Read only."
-    },
-    "vm.$scopedSlots": {
-        "prefix": "vmScopedSlots",
-        "body": [
-            "${1|this,vm|}.\\$scopedSlots.default({",
-            "\t$2",
-            "})"
-        ],
-        "description": "Type: { [name: string]: props => VNode | Array<VNode> }. Read only."
-    },
-    "vm.$refs": {
-        "prefix": "vmRefs",
-        "body": [
-            "${1|this,vm|}.\\$refs$2"
-        ],
-        "description": "Type: Object. Read only."
-    },
-    "vm.$isServer": {
-        "prefix": "vmIsServer",
-        "body": [
-            "${1|this,vm|}.\\$isServer$2"
-        ],
-        "description": "Type: boolean. Read only."
-    },
-    "vm.$attrs": {
-        "prefix": "vmAttrs",
-        "body": [
-            "${1|this,vm|}.\\$attrs$2"
-        ],
-        "description": "Type: { [key: string]: string }. Read only."
-    },
-    "vm.$listeners": {
-        "prefix": "vmListeners",
-        "body": [
-            "${1|this,vm|}.\\$listeners$2"
-        ],
-        "description": "Type: { [key: string]: Function | Array<Function> }. Read only."
-    },
-    "vm.$watch": {
-        "prefix": "vmWatch",
-        "body": [
-            "${1|this,vm|}.\\$watch(${2:expOrFn}, ${3:callback}${4:, [options]})"
-        ],
-        "description": "vm.$watch( expOrFn, callback, [options] )\n Arguments:\n {string | Function} expOrFn\n {Function | Object} callback\n {Object} [options]\n {boolean} [options.deep]\n\t {boolean} [options.immediate]"
-    },
-    "vm.$set": {
-        "prefix": "vmSet",
-        "body": [
-            "${1|this,vm|}.\\$set(${2:target}, ${3:key}, ${4:value})"
-        ],
-        "description": "vm.$set( target, key, value ). This is the alias of the global Vue.set."
-    },
-    "vm.$delete": {
-        "prefix": "vmDelete",
-        "body": [
-            "${1|this,vm|}.\\$delete(${2:target}, ${3:key}). This is the alias of the global Vue.delete."
-        ],
-        "description": "vm.$delete( target, key )"
-    },
-    "vm.$on": {
-        "prefix": "vmOn",
-        "body": [
-            "${1|this,vm|}.\\$on('${2:event}', ${3:callback})$4"
-        ],
-        "description": "vm.$on( event, callback )"
-    },
-    "vm.$once": {
-        "prefix": "vmOnce",
-        "body": [
-            "${1|this,vm|}.\\$once('${2:event}', ${3:callback})$4"
-        ],
-        "description": "vm.$once( event, callback )"
-    },
-    "vm.$off": {
-        "prefix": "vmOff",
-        "body": [
-            "${1|this,vm|}.\\$off('${2:event}', ${3:callback})$4"
-        ],
-        "description": "vm.$off( [event, callback] )"
-    },
-    "vm.$emit": {
-        "prefix": "vmEmit",
-        "body": [
-            "${1|this,vm|}.\\$emit('${2:event}'${3:, […args]})$4"
-        ],
-        "description": "vm.$emit( event, […args] )"
-    },
-    "vm.$mount": {
-        "prefix": "vmMount",
-        "body": [
-            "${1|this,vm|}.\\$mount('$2')"
-        ],
-        "description": "vm.$mount( [elementOrSelector] )"
-    },
-    "vm.$forceUpdate": {
-        "prefix": "vmForceUpdate",
-        "body": [
-            "${1|this,vm|}.\\$forceUpdate()"
-        ],
-        "description": "vm.$forceUpdate()"
-    },
-    "vm.$nextTick": {
-        "prefix": "vmNextTick",
-        "body": [
-            "${1|this,vm|}.\\$nextTick(${2:callback})"
-        ],
-        "description": "vm.$nextTick( callback )"
-    },
-    "vm.$destroy": {
-        "prefix": "vmDestroy",
-        "body": [
-            "${1|this,vm|}.\\$destroy()$2"
-        ],
-        "description": "vm.$destroy()"
-    },
-    "renderer": {
-        "prefix": "renderer",
-        "body": [
-            "const ${1:renderer} = require('vue-server-renderer').createRenderer()$0"
-        ],
-        "description": "require('vue-server-renderer').createRenderer()"
-    },
-    "createRenderer": {
-        "prefix": "createRenderer",
-        "body": [
-            "createRenderer({",
-            "\t$1",
-            "})"
-        ],
-        "description": "createRenderer({ })"
-    },
-    "renderToString": {
-        "prefix": "renderToString",
-        "body": [
-            "renderToString"
-        ],
-        "description": "just a word"
-    },
-    "renderToStream": {
-        "prefix": "renderToStream",
-        "body": [
-            "renderToStream"
-        ],
-        "description": "just a word"
-    },
-    "createBundleRenderer": {
-        "prefix": "createBundleRenderer",
-        "body": [
-            "createBundleRenderer"
-        ],
-        "description": "just a word"
-    },
-    "bundleRenderer.renderToString": {
-        "prefix": "bundleRenderer.renderToString",
-        "body": [
-            "bundleRenderer.renderToString"
-        ],
-        "description": "just a word"
-    },
-    "bundleRenderer.renderToStream": {
-        "prefix": "bundleRenderer.renderToStream",
-        "body": [
-            "bundleRenderer.renderToStream"
-        ],
-        "description": "just a word"
-    },
-    "preventDefault": {
-        "prefix": "preventDefault",
-        "body": [
-            "preventDefault();",
-            "$1"
-        ],
-        "description": "preventDefault()"
-    },
-    "stopPropagation": {
-        "prefix": "stopPropagation",
-        "body": [
-            "stopPropagation();",
-            "$1"
-        ],
-        "description": "stopPropagation()"
-    },
-    "newVueRouter": {
-        "prefix": "newVueRouter",
-        "body": [
-            "const ${1:router} = new VueRouter({",
-            "\t$2",
-            "})$0"
-        ],
-        "description": "const router = newVueRouter({ })"
-    },
-    "routerBeforeEach": {
-        "prefix": "routerBeforeEach",
-        "body": [
-            "${1:router}.beforeEach((to, from, next) => {",
-            "\t${2:// to and from are both route objects. must call `next`.}",
-            "})$0"
-        ],
-        "description": "router.beforeEach"
-    },
-    "routerBeforeResolve": {
-        "prefix": "routerBeforeResolve",
-        "body": [
-            "${1:router}.beforeResolve((to, from, next) => {",
-            "\t${2:// to and from are both route objects. must call `next`.}",
-            "})$0"
-        ],
-        "description": "router.beforeResolve"
-    },
-    "routerAfterEach": {
-        "prefix": "routerAfterEach",
-        "body": [
-            "${1:router}.afterEach((to, from) => {",
-            "\t${2:// to and from are both route objects.}",
-            "})$0"
-        ],
-        "description": "router.afterEach"
-    },
-    "routerPush": {
-        "prefix": "routerPush",
-        "body": [
-            "${1:router}.push($2)$0"
-        ],
-        "description": "router.push()"
-    },
-    "routerReplace": {
-        "prefix": "routerReplace",
-        "body": [
-            "${1:router}.replace($2)$0"
-        ],
-        "description": "router.replace()"
-    },
-    "routerGo": {
-        "prefix": "routerGo",
-        "body": [
-            "${1:router}.go($2)$0"
-        ],
-        "description": "router.go()"
-    },
-    "routerBack": {
-        "prefix": "routerBack",
-        "body": [
-            "${1:router}.back($2)$0"
-        ],
-        "description": "router.back()"
-    },
-    "routerForward": {
-        "prefix": "routerForward",
-        "body": [
-            "${1:router}.forward($2)$0"
-        ],
-        "description": "router.forward()"
-    },
-    "routerGetMatchedComponents": {
-        "prefix": "routerGetMatchedComponents",
-        "body": [
-            "${1:router}.getMatchedComponents($2)$0"
-        ],
-        "description": "router.getMatchedComponents()"
-    },
-    "routerResolve": {
-        "prefix": "routerResolve",
-        "body": [
-            "${1:router}.resolve($2)$0"
-        ],
-        "description": "router.resolve()"
-    },
-    "routerAddRoutes": {
-        "prefix": "routerAddRoutes",
-        "body": [
-            "${1:router}.addRoutes($2)$0"
-        ],
-        "description": "router.addRoutes()"
-    },
-    "routerOnReady": {
-        "prefix": "routerOnReady",
-        "body": [
-            "${1:router}.onReady($2)$0"
-        ],
-        "description": "router.onReady()"
-    },
-    "routerOnError": {
-        "prefix": "routerOnError",
-        "body": [
-            "${1:router}.onError($2)$0"
-        ],
-        "description": "router.onError()"
-    },
-    "routes": {
-        "prefix": "routes",
-        "body": [
-            "routes: [$1]$0"
-        ],
-        "description": "routes: []"
-    },
-    "beforeEnter": {
-        "prefix": "beforeEnter",
-        "body": [
-            "beforeEnter: (to, from, next) => {",
+            "created () {",
             "\t${1:// ...}",
             "}"
         ],
-        "description": "beforeEnter: (to, from, next) => { }"
+        "description": "Component 组件生命周期函数-在组件实例刚刚被创建时执行，注意此时不能调用 setData "
     },
-    "beforeRouteEnter": {
-        "prefix": "beforeRouteEnter",
+    "attached": {
+        "prefix": "attached",
         "body": [
-            "beforeRouteEnter (to, from, next) {",
+            "attached () {",
             "\t${1:// ...}",
             "}"
         ],
-        "description": "beforeRouteEnter (to, from, next) { }"
+        "description": "Component 组件生命周期函数-在组件实例进入页面节点树时执行"
     },
-    "beforeRouteLeave": {
-        "prefix": "beforeRouteLeave",
+    "ready": {
+        "prefix": "ready",
         "body": [
-            "beforeRouteLeave (to, from, next) {",
+            "ready () {",
             "\t${1:// ...}",
             "}"
         ],
-        "description": "beforeRouteLeave (to, from, next) { }"
+        "description": "Component 组件生命周期函数-在组件布局完成后执行"
     },
-    "scrollBehavior": {
-        "prefix": "scrollBehavior",
+    "moved": {
+        "prefix": "moved",
         "body": [
-            "scrollBehavior (to, from, savedPosition) {",
+            "moved () {",
             "\t${1:// ...}",
             "}"
         ],
-        "description": "scrollBehavior (to, from, savedPosition) { }"
+        "description": "Component 组件生命周期函数-在组件实例被移动到节点树另一个位置时执行"
     },
-    "path": {
-        "prefix": "path",
+    "detached": {
+        "prefix": "detached",
         "body": [
-            "path"
+            "detached () {",
+            "\t${1:// ...}",
+            "}"
         ],
-        "description": "just a word"
-    },
-    "alias": {
-        "prefix": "alias",
-        "body": [
-            "alias"
-        ],
-        "description": "just a word"
-    },
-    "mode": {
-        "prefix": "mode",
-        "body": [
-            "mode"
-        ],
-        "description": "just a word"
-    },
-    "children": {
-        "prefix": "children",
-        "body": [
-            "children"
-        ],
-        "description": "just a word"
-    },
-    "meta": {
-        "prefix": "meta",
-        "body": [
-            "meta"
-        ],
-        "description": "just a word"
-    },
-    "newVuexStore": {
-        "prefix": "newVuexStore",
-        "body": [
-            "const ${1:store} = new Vuex.Store({",
-            "\t${2:// ...}",
-            "})"
-        ],
-        "description": "const store = new Vuex.Store({ })"
-    },
-    "state": {
-        "prefix": "state",
-        "body": [
-            "state"
-        ],
-        "description": "just a word"
-    },
-    "getters": {
-        "prefix": "getters",
-        "body": [
-            "getters"
-        ],
-        "description": "just a word"
-    },
-    "mutations": {
-        "prefix": "mutations",
-        "body": [
-            "mutations"
-        ],
-        "description": "just a word"
-    },
-    "actions": {
-        "prefix": "actions",
-        "body": [
-            "actions"
-        ],
-        "description": "just a word"
-    },
-    "modules": {
-        "prefix": "modules",
-        "body": [
-            "modules"
-        ],
-        "description": "just a word"
-    },
-    "plugins": {
-        "prefix": "plugins",
-        "body": [
-            "plugins"
-        ],
-        "description": "just a word"
-    },
-    "commit": {
-        "prefix": "commit",
-        "body": [
-            "commit"
-        ],
-        "description": "just a word"
-    },
-    "dispatch": {
-        "prefix": "dispatch",
-        "body": [
-            "dispatch"
-        ],
-        "description": "just a word"
-    },
-    "replaceState": {
-        "prefix": "replaceState",
-        "body": [
-            "replaceState"
-        ],
-        "description": "just a word"
-    },
-    "subscribe": {
-        "prefix": "subscribe",
-        "body": [
-            "subscribe"
-        ],
-        "description": "just a word"
-    },
-    "registerModule": {
-        "prefix": "registerModule",
-        "body": [
-            "registerModule"
-        ],
-        "description": "just a word"
-    },
-    "unregisterModule": {
-        "prefix": "unregisterModule",
-        "body": [
-            "unregisterModule"
-        ],
-        "description": "just a word"
-    },
-    "hotUpdate": {
-        "prefix": "hotUpdate",
-        "body": [
-            "hotUpdate"
-        ],
-        "description": "just a word"
-    },
-    "mapState": {
-        "prefix": "mapState",
-        "body": [
-            "mapState"
-        ],
-        "description": "just a word"
-    },
-    "mapGetters": {
-        "prefix": "mapGetters",
-        "body": [
-            "mapGetters"
-        ],
-        "description": "just a word"
-    },
-    "mapActions": {
-        "prefix": "mapActions",
-        "body": [
-            "mapActions"
-        ],
-        "description": "just a word"
-    },
-    "mapMutations": {
-        "prefix": "mapMutations",
-        "body": [
-            "mapMutations"
-        ],
-        "description": "just a word"
-    },
-    "asyncData": {
-        "prefix": "asyncData",
-        "body": [
-            "asyncData({${1:isDev}${2:, route}${3:, store}${4:, env}${5:, params}${6:, query}${7:, req}${8:, res}${9:, redirect}${10:, error}}) {",
-            "\t$11",
-            "},"
-        ],
-        "description": "Type: Function."
+        "description": "Component 组件生命周期函数-在组件实例被从页面节点树移除时执行"
     }
 }

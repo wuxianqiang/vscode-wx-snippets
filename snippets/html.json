@@ -3,122 +3,59 @@
         "prefix": "template",
         "body": [
             "<template>",
-            "\t<${1:div}$2>",
+            "\t<${1:view}$2>",
             "\t\t$0",
-            "\t</${1:div}>",
+            "\t</${1:view}>",
             "</template>"
         ],
         "description": "template element"
     },
-    "v-text": {
-        "prefix": "vText",
+    "wx:if": {
+        "prefix": "wxIf",
         "body": [
-            "v-text=\"${1:msg}\""
-        ],
-        "description": "Expects: string. Updates the element’s textContent."
-    },
-    "v-html": {
-        "prefix": "vHtml",
-        "body": [
-            "v-html=\"${1:html}\""
-        ],
-        "description": "Expects: string. Updates the element’s innerHTML."
-    },
-    "v-show": {
-        "prefix": "vShow",
-        "body": [
-            "v-show=\"${1:condition}\""
+            "wx:if=\"{{${1:condition}}}\""
         ],
         "description": "Expects: any"
     },
-    "v-if": {
-        "prefix": "vIf",
+    "wx:else": {
+        "prefix": "wxElse",
         "body": [
-            "v-if=\"${1:condition}\""
-        ],
-        "description": "Expects: any"
-    },
-    "v-else": {
-        "prefix": "vElse",
-        "body": [
-            "v-else"
+            "wx:else"
         ],
         "description": "Does not expect expression. previous sibling element must have v-if or v-else-if."
     },
-    "v-else-if": {
-        "prefix": "vElseIf",
+    "wx:elif": {
+        "prefix": "wxElseIf",
         "body": [
-            "v-else-if=\"${1:condition}\""
+            "wx:elif=\"{{${1:condition}}}\""
         ],
         "description": "Expects: any. previous sibling element must have v-if or v-else-if."
     },
-    "v-for-without-key": {
-        "prefix": "vForWithoutKey",
+    "wx:for": {
+        "prefix": "wxFor",
         "body": [
-            "v-for=\"${1:item} in ${2:items}\""
+            "wx:for=\"{{${1:items}}}\" wx:key=\"${2:index}\""
         ],
         "description": "Expects: Array | Object | number | string"
     },
-    "v-for": {
-        "prefix": "vFor",
+    "wx:model": {
+        "prefix": "wxModel",
         "body": [
-            "v-for=\"(${1:item}, ${2:index}) in ${3:items}\" :key=\"${4:index}\""
-        ],
-        "description": "Expects: Array | Object | number | string"
-    },
-    "v-on": {
-        "prefix": "vOn",
-        "body": [
-            "v-on:${1:event}=\"${2:handle}\""
-        ],
-        "description": "Expects: Function | Inline Statement"
-    },
-    "v-bind": {
-        "prefix": "vBind",
-        "body": [
-            "v-bind$1=\"${2}\""
-        ],
-        "description": "Expects: any (with argument) | Object (without argument)"
-    },
-    "v-model": {
-        "prefix": "vModel",
-        "body": [
-            "v-model=\"${1:something}\""
+            "wx:model=\"{{${1:something}}}\""
         ],
         "description": "Expects: varies based on value of form inputs element or output of components"
     },
-    "v-pre": {
-        "prefix": "vPre",
+    "wx:key": {
+        "prefix": "wxKey",
         "body": [
-            "v-pre"
-        ],
-        "description": "Does not expect expression"
-    },
-    "v-cloak": {
-        "prefix": "vCloak",
-        "body": [
-            "v-cloak"
-        ],
-        "description": "Does not expect expression"
-    },
-    "v-once": {
-        "prefix": "vOnce",
-        "body": [
-            "v-once"
-        ],
-        "description": "Does not expect expression"
-    },
-    "key": {
-        "prefix": "key",
-        "body": [
-            ":key=\"${1:key}\""
+            "wx:key=\"${1:key}\""
         ],
         "description": "Expects: string. Children of the same common parent must have unique keys. Duplicate keys will cause render errors."
     },
-    "ref": {
-        "prefix": "ref",
+    "wx:ref": {
+        "prefix": "wxRef",
         "body": [
-            "ref=\"${1:reference}\"$0"
+            "wx:ref=\"{{${1:reference}}}\"$0"
         ],
         "description": "Expects: string. ref is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object. If used on a plain DOM element, the reference will be that element; if used on a child component, the reference will be component instance."
     },
@@ -157,234 +94,298 @@
         ],
         "description": "component element"
     },
-    "keep-alive": {
-        "prefix": "keepAlive",
+    "wx:class": {
+        "prefix": "wxClass",
         "body": [
-            "<keep-alive$1>",
-            "$2",
-            "</keep-alive>$0"
+            "wx:class=\"{{${1:something}}}\""
         ],
-        "description": "keep-alive element"
+        "description": "Expects: any"
     },
-    "transition": {
-        "prefix": "transition",
+    "wx:style": {
+        "prefix": "wxStyle",
         "body": [
-            "<transition$1>",
-            "$2",
-            "</transition>$0"
+            "wx:style=\"{{${1:something}}}\""
         ],
-        "description": "transition element"
+        "description": "Expects: any"
     },
-    "transition-group": {
-        "prefix": "transitionGroup",
+    "bindtap": {
+        "prefix": "bindtap",
         "body": [
-            "<transition-group$1>",
-            "$2",
-            "</transition-group>"
+            "bindtap=\"$1\"$0"
         ],
-        "description": "transition-group element"
+        "description": "bindtap=''"
     },
-    "enter-class": {
-        "prefix": "enterClass",
+    "cover-image": {
+        "prefix": "coverImage",
         "body": [
-            "enter-class=\"$1\"$0"
+            "<cover-image>$1</cover-image>$0"
         ],
-        "description": "enter-class=''. Expects: string."
+        "description": "cover-image element"
     },
-    "leave-class": {
-        "prefix": "leaveClass",
+    "cover-view": {
+        "prefix": "coverView",
         "body": [
-            "leave-class=\"$1\"$0"
+            "<cover-view>$1</cover-view>$0"
         ],
-        "description": "leave-class=''. Expects: string."
+        "description": "cover-view element"
     },
-    "appear-class": {
-        "prefix": "appearClass",
+    "match-media": {
+        "prefix": "matchMedia",
         "body": [
-            "appear-class=\"$1\"$0"
+            "<match-media>$1</match-media>$0"
         ],
-        "description": "appear-class=''. Expects: string."
+        "description": "match-media element"
     },
-    "enter-to-class": {
-        "prefix": "enterToClass",
+    "movable-area": {
+        "prefix": "movableArea",
         "body": [
-            "enter-to-class=\"$1\"$0"
+            "<movable-area>$1</movable-area>$0"
         ],
-        "description": "enter-to-class=''. Expects: string."
+        "description": "movable-area element"
     },
-    "leave-to-class": {
-        "prefix": "leaveToClass",
+    "movable-view": {
+        "prefix": "movableArea",
         "body": [
-            "leave-to-class=\"$1\"$0"
+            "<movable-view>$1</movable-view>$0"
         ],
-        "description": "leave-to-class=''. Expects: string."
+        "description": "movable-view element"
     },
-    "appear-to-class": {
-        "prefix": "appearToClass",
+    "scroll-view": {
+        "prefix": "scrollView",
         "body": [
-            "appear-to-class=\"$1\"$0"
+            "<scroll-view>$1</scroll-view>$0"
         ],
-        "description": "appear-to-class=''. Expects: string."
+        "description": "scroll-view element"
     },
-    "enter-active-class": {
-        "prefix": "enterActiveClass",
+    "swiper": {
+        "prefix": "swiper",
         "body": [
-            "enter-active-class=\"$1\"$0"
+            "<swiper>$1</swiper>$0"
         ],
-        "description": "enter-active-class=''. Expects: string."
+        "description": "swiper element"
     },
-    "leave-active-class": {
-        "prefix": "leaveActiveClass",
+    "swiper-item": {
+        "prefix": "swiperItem",
         "body": [
-            "leave-active-class=\"$1\"$0"
+            "<swiper-item>$1</swiper-item>$0"
         ],
-        "description": "leave-active-class=''. Expects: string."
+        "description": "swiper-item element"
     },
-    "appear-active-class": {
-        "prefix": "appearActiveClass",
+    "view": {
+        "prefix": "view",
         "body": [
-            "appear-active-class=\"$1\"$0"
+            "<view>$1</view>$0"
         ],
-        "description": "appear-active-class=''. Expects: string."
+        "description": "view element"
     },
-    "before-enter": {
-        "prefix": "beforeEnterEvent",
+    "icon": {
+        "prefix": "icon",
         "body": [
-            "@before-enter=\"$1\"$0"
+            "<icon>$1</icon>$0"
         ],
-        "description": "@before-enter=''"
+        "description": "icon element"
     },
-    "before-leave": {
-        "prefix": "beforeLeaveEvent",
+    "progress": {
+        "prefix": "progress",
         "body": [
-            "@before-leave=\"$1\"$0"
+            "<progress>$1</progress>$0"
         ],
-        "description": "@before-leave=''"
+        "description": "progress element"
     },
-    "before-appear": {
-        "prefix": "beforeAppearEvent",
+    "rich-text": {
+        "prefix": "rich-text",
         "body": [
-            "@before-appear=\"$1\"$0"
+            "<rich-text>$1</rich-text>$0"
         ],
-        "description": "@before-appear=''"
+        "description": "rich-text element"
     },
-    "enter": {
-        "prefix": "enterEvent",
+    "text": {
+        "prefix": "text",
         "body": [
-            "@enter=\"$1\"$0"
+            "<text>$1</text>$0"
         ],
-        "description": "@enter=''"
+        "description": "text element"
     },
-    "leave": {
-        "prefix": "leaveEvent",
+    "checkbox": {
+        "prefix": "checkbox",
         "body": [
-            "@leave=\"$1\"$0"
+            "<checkbox>$1</checkbox>$0"
         ],
-        "description": "@leave=''"
+        "description": "checkbox element"
     },
-    "appear": {
-        "prefix": "appearEvent",
+    "checkbox-group": {
+        "prefix": "checkbox-group",
         "body": [
-            "@appear=\"$1\"$0"
+            "<checkbox-group>$1</checkbox-group>$0"
         ],
-        "description": "@appear=''"
+        "description": "checkbox-group element"
     },
-    "after-enter": {
-        "prefix": "afterEnterEvent",
+    "editor": {
+        "prefix": "editor",
         "body": [
-            "@after-enter=\"$1\"$0"
+            "<editor>$1</editor>$0"
         ],
-        "description": "@after-enter=''"
+        "description": "editor element"
     },
-    "after-leave": {
-        "prefix": "afterLeaveEvent",
+    "picker": {
+        "prefix": "picker",
         "body": [
-            "@after-leave=\"$1\"$0"
+            "<picker>$1</picker>$0"
         ],
-        "description": "@after-leave=''"
+        "description": "picker element"
     },
-    "after-appear": {
-        "prefix": "afterAppearEvent",
+    "picker-view": {
+        "prefix": "pickerView",
         "body": [
-            "@after-appear=\"$1\"$0"
+            "<picker-view>$1</picker-view>$0"
         ],
-        "description": "@after-appear=''"
+        "description": "picker-view element"
     },
-    "enter-cancelled": {
-        "prefix": "enterCancelledEvent",
+    "picker-view-column": {
+        "prefix": "pickerViewColumn",
         "body": [
-            "@enter-cancelled=\"$1\"$0"
+            "<picker-view-column>$1</picker-view-column>$0"
         ],
-        "description": "@enter-cancelled=''"
+        "description": "picker-view-column element"
     },
-    "leave-cancelled": {
-        "prefix": "leaveCancelledEvent",
+    "radio": {
+        "prefix": "radio",
         "body": [
-            "@leave-cancelled=\"$1\"$0"
+            "<radio>$1</radio>$0"
         ],
-        "description": "@leave-cancelled='' (v-show only)"
+        "description": "radio element"
     },
-    "appear-cancelled": {
-        "prefix": "appearCancelledEvent",
+    "radio-group": {
+        "prefix": "radioGroup",
         "body": [
-            "@appear-cancelled=\"$1\"$0"
+            "<radio-group>$1</radio-group>$0"
         ],
-        "description": "@appear-cancelled=''"
+        "description": "radio-group element"
     },
-    "routerLink": {
-        "prefix": "routerLink",
+    "slider": {
+        "prefix": "slider",
         "body": [
-            "<router-link $1>$2</router-link>$0"
+            "<slider>$1</slider>$0"
         ],
-        "description": "router-link element"
+        "description": "slider element"
     },
-    "routerLinkTo": {
-        "prefix": "routerLinkTo",
+    "switch": {
+        "prefix": "switch",
         "body": [
-            "<router-link to=\"$1\">$2</router-link>$0"
+            "<switch>$1</switch>$0"
         ],
-        "description": "<router-link to=''></router-link>. router-link element"
+        "description": "switch element"
     },
-    "to": {
-        "prefix": "to",
+    "functional-page-navigator": {
+        "prefix": "functionalPageNavigator",
         "body": [
-            "to=\"$1\"$0"
+            "<functional-page-navigator>$1</functional-page-navigator>$0"
         ],
-        "description": "to=''"
+        "description": "functional-page-navigator element"
     },
-    "tag": {
-        "prefix": "tag",
+    "navigator": {
+        "prefix": "navigator",
         "body": [
-            "tag=\"$1\"$0"
+            "<navigator>$1</navigator>$0"
         ],
-        "description": "tag=''"
+        "description": "navigator element"
     },
-    "routerView": {
-        "prefix": "routerView",
+    "camera": {
+        "prefix": "camera",
         "body": [
-            "<router-view>$1</router-view>$0"
+            "<camera>$1</camera>$0"
         ],
-        "description": "router-view element"
+        "description": "camera element"
     },
-    "nuxt": {
-        "prefix": "nuxt",
+    "image": {
+        "prefix": "image",
         "body": [
-            "<nuxt/>"
+            "<image>$1</image>$0"
         ],
-        "description": "This component is used only in layouts to display the page components."
+        "description": "image element"
     },
-    "nuxtChild": {
-        "prefix": "nuxtChild",
+    "live-player": {
+        "prefix": "livePlayer",
         "body": [
-            "<nuxt-child $1/>$0"
+            "<live-player>$1</live-player>$0"
         ],
-        "description": "This component is used for displaying the children components in a nested route."
+        "description": "live-player element"
     },
-    "nuxtLink": {
-        "prefix": "nuxtLink",
+    "live-pusher": {
+        "prefix": "livePusher",
         "body": [
-            "<nuxt-link ${1|to,:to|}=\"$2\">$0</nuxt-link>"
+            "<live-pusher>$1</live-pusher>$0"
         ],
-        "description": "This component is used to provide navigations between page components."
+        "description": "live-pusher element"
+    },
+    "voip-room": {
+        "prefix": "voipRoom",
+        "body": [
+            "<voip-room>$1</voip-room>$0"
+        ],
+        "description": "voip-room element"
+    },
+    "map": {
+        "prefix": "map",
+        "body": [
+            "<map>$1</map>$0"
+        ],
+        "description": "map element"
+    },
+    "ad": {
+        "prefix": "ad",
+        "body": [
+            "<ad>$1</ad>$0"
+        ],
+        "description": "ad element"
+    },
+    "official-account": {
+        "prefix": "official-account",
+        "body": [
+            "<official-account>$1</official-account>$0"
+        ],
+        "description": "official-account element"
+    },
+    "open-data": {
+        "prefix": "openData",
+        "body": [
+            "<open-data>$1</open-data>$0"
+        ],
+        "description": "open-data element"
+    },
+    "web-view": {
+        "prefix": "webView",
+        "body": [
+            "<web-view>$1</web-view>$0"
+        ],
+        "description": "web-view element"
+    },
+    "native-component": {
+        "prefix": "nativeComponent",
+        "body": [
+            "<native-component>$1</native-component>$0"
+        ],
+        "description": "native-component element"
+    },
+    "aria-component": {
+        "prefix": "aria-component",
+        "body": [
+            "<aria-component>$1</aria-component>$0"
+        ],
+        "description": "aria-component element"
+    },
+    "navigation-bar": {
+        "prefix": "navigationBar",
+        "body": [
+            "<navigation-bar>$1</navigation-bar>$0"
+        ],
+        "description": "ad element"
+    },
+    "page-meta": {
+        "prefix": "page-meta",
+        "body": [
+            "<page-meta>$1</page-meta>$0"
+        ],
+        "description": "page-meta element"
     }
 }

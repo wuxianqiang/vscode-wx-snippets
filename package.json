@@ -1,12 +1,12 @@
 {
-    "name": "vue-snippets",
-    "displayName": "Vue 2 Snippets",
-    "author": "hollowtree",
-    "publisher": "hollowtree",
+    "name": "wx-snippets",
+    "displayName": "wx Snippets",
+    "author": "wuxianqiang",
+    "publisher": "wuxianqiang",
     "icon": "img/logo.png",
-    "description": "A Vue.js 2 Extension",
+    "description": "A wx Extension",
     "license": "MIT",
-    "version": "0.1.11",
+    "version": "0.0.1",
     "engines": {
         "vscode": "^1.5.0"
     },
@@ -22,29 +22,29 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/hollowtree/vscode-vue-snippets"
+        "url": "https://github.com/wuxianqiang/vscode-wx-snippets.git"
     },
     "bugs": {
-        "url": "https://github.com/hollowtree/vscode-vue-snippets/issues",
-        "email": "smalltree@outlook.com"
+        "url": "https://github.com/wuxianqiang/vscode-wx-snippets.git/issues",
+        "email": "2631640352@qq.com"
     },
     "contributes": {
         "languages": [
             {
-                "id": "vue",
+                "id": "mpx",
                 "aliases": [
-                    "Vue",
-                    "vue"
+                    "Mpx",
+                    "mpx"
                 ],
                 "extensions": [
-                    ".vue"
+                    ".mpx"
                 ],
                 "configuration": "./syntaxes/vue.configuration.json"
             }
         ],
         "grammars": [
             {
-                "language": "vue",
+                "language": "mpx",
                 "scopeName": "text.html.vue",
                 "path": "./syntaxes/vue.tmLanguage"
             }
@@ -67,28 +67,20 @@
                 "path": "./snippets/html.json"
             },
             {
-                "language": "vue-html",
-                "path": "./snippets/html.json"
-            },
-            {
                 "language": "html",
                 "path": "./snippets/vue.json"
             },
             {
-                "language": "vue",
+                "language": "mpx",
                 "path": "./snippets/javascript.json"
             },
             {
-                "language": "vue",
+                "language": "mpx",
                 "path": "./snippets/html.json"
             },
             {
-                "language": "vue",
+                "language": "mpx",
                 "path": "./snippets/vue.json"
-            },
-            {
-                "language": "jade",
-                "path": "./snippets/pug.json"
             }
         ]
     }
