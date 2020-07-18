@@ -1,11 +1,11 @@
 {
-    "templateLang": {
-        "prefix": "templateLang",
+    "scriptName": {
+        "prefix": "scriptName",
         "body": [
-            "<template lang=\"$1\">",
-            "\t<div$2>",
-            "\t\t$0",
-            "\t</div>",
+            "<template name=\"json\">",
+            "\tmodule.exports = {",
+            "\t\t$1",
+            "\t}$0",
             "</template>"
         ],
         "description": "template element"
@@ -13,10 +13,12 @@
     "script": {
         "prefix": "script",
         "body": [
-            "<script>",
-            "export default {",
-            "\t$1",
-            "}",
+            "<script type=\"application/json\">",
+            "\t{",
+            "\t\t\"usingComponents\": {",
+            "\t\t\t$1",
+            "\t\t}$0",
+            "\t}",
             "</script>"
         ],
         "description": "script element"
@@ -24,7 +26,7 @@
     "styleLang": {
         "prefix": "styleLang",
         "body": [
-            "<style lang=\"$1\">",
+            "<style lang=\"stylus$1\">",
             "\t$0",
             "</style>"
         ],

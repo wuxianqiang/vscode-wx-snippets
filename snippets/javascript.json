@@ -6,14 +6,14 @@
         ],
         "description": "import ... from ..."
     },
-    "App": {
-        "prefix": "app",
+    "createApp": {
+        "prefix": "createApp",
         "body": [
-            "App({",
+            "createApp({",
             "\t${1:// ...}",
             "})"
         ],
-        "description": "App 注册小程序"
+        "description": "Mpx 注册小程序"
     },
     "data": {
         "prefix": "data",
@@ -24,14 +24,23 @@
         ],
         "description": "Page 页面的初始数据，Component 组件的内部数据"
     },
-    "Component": {
-        "prefix": "component",
+    "createComponent": {
+        "prefix": "createComponent",
         "body": [
-            "Component({",
+            "createComponent({",
             "\t${1:// ...}",
             "})"
         ],
-        "description": "Component 创建自定义组件，接受一个 Object 类型的参数"
+        "description": "Mpx 创建自定义组件"
+    },
+    "createPage": {
+        "prefix": "createPage",
+        "body": [
+            "createPage({",
+            "\t${1:// ...}",
+            "})"
+        ],
+        "description": "Mpx 注册小程序中的一个页面"
     },
     "onLaunch": {
         "prefix": "onLaunch",
@@ -248,5 +257,23 @@
             "}"
         ],
         "description": "Component 组件生命周期函数-在组件实例被从页面节点树移除时执行"
+    },
+    "methods": {
+        "prefix": "methods",
+        "body": [
+            "methods: {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "定义 method 函数"
+    },
+    "computed": {
+        "prefix": "computed",
+        "body": [
+            "computed: {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "计算属性"
     }
 }

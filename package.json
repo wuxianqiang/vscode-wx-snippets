@@ -1,10 +1,10 @@
 {
     "name": "wx-snippets",
-    "displayName": "wx Snippets",
+    "displayName": "WeChat Snippets",
     "author": "wuxianqiang",
     "publisher": "wuxianqiang",
     "icon": "img/logo.png",
-    "description": "A wx Extension",
+    "description": "A WeChat Extension",
     "license": "MIT",
     "version": "0.0.1",
     "engines": {
@@ -57,18 +57,6 @@
             {
                 "language": "typescript",
                 "path": "./snippets/javascript.json"
-            },
-            {
-                "language": "html",
-                "path": "./snippets/javascript.json"
-            },
-            {
-                "language": "html",
-                "path": "./snippets/html.json"
-            },
-            {
-                "language": "html",
-                "path": "./snippets/vue.json"
             },
             {
                 "language": "mpx",
